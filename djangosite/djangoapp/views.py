@@ -1,6 +1,8 @@
 import os
 from django.views import generic
 from django.conf import settings
+from django.urls import reverse_lazy
+from djangoapp.forms import MeasurementForm
 from djangoapp.models import CO2Measurement
 
 class MeasurementList(generic.ListView):
@@ -21,3 +23,8 @@ class MeasurementList(generic.ListView):
         except (IOError, ValueError):
             pass
         return super(MeasurementList, self).get(request, *args, **kwargs)
+
+class MeasurementCreate(generic.CreateView): # клас обробки форми
+    form_class = MeasurementForm
+    template_name = 'create_measurement.html'
+    success_url = reverse_lazy('measurement_list')

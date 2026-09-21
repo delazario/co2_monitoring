@@ -5,6 +5,7 @@
     <title>Системи моніторингу CO2</title>
 </head>
 <body>
+    <a href="{% url 'create_measurement' %}">Додати значення</a>
     <h3>Системи моніторингу CO2</h3>
     {% for measurement in measurements %}
         <p>{{ measurement }}</p>

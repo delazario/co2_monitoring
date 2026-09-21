@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Додати значення CO2</title>
+</head>
+<body>
+    <h3>Додати нове значення CO2</h3>
+    <form action="{% url 'create_measurement' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Зберегти" />
+    </form>
+</body>
+</html>
