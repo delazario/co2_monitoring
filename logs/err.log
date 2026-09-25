@@ -353,3 +353,8 @@ uWSGI running as root, you can use --uid/--gid/--chroot options
 *** uWSGI is running in multiple interpreter mode ***
 spawned uWSGI worker 1 (and the only) (pid: 8639, cores: 1)
 [pid: 8639|app: 0|req: 1/1] 127.0.0.1 () {52 vars in 832 bytes} [Fri Sep 25 15:29:28 2026] GET / => generated 1668 bytes in 23 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+[pid: 8639|app: 0|req: 2/2] 127.0.0.1 () {54 vars in 877 bytes} [Fri Sep 25 15:33:14 2026] GET / => generated 1668 bytes in 5 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+[pid: 8639|app: 0|req: 3/3] 127.0.0.1 () {54 vars in 877 bytes} [Fri Sep 25 15:35:01 2026] GET / => generated 1668 bytes in 3 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+[pid: 8639|app: 0|req: 4/4] 127.0.0.1 () {54 vars in 877 bytes} [Fri Sep 25 15:35:02 2026] GET / => generated 1668 bytes in 8 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+[pid: 8639|app: 0|req: 5/5] 127.0.0.1 () {54 vars in 877 bytes} [Fri Sep 25 15:35:02 2026] GET / => generated 1668 bytes in 3 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+[pid: 8639|app: 0|req: 6/6] 127.0.0.1 () {54 vars in 877 bytes} [Fri Sep 25 15:35:02 2026] GET / => generated 1668 bytes in 2 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)

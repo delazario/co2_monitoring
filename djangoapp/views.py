@@ -1,30 +1,13 @@
-import os
-from django.views import generic
-from django.conf import settings
-from django.urls import reverse_lazy
-from djangoapp.forms import MeasurementForm
-from djangoapp.models import CO2Measurement
+from django.shortcuts import render
 
-class MeasurementList(generic.ListView):
-    model = CO2Measurement
-    context_object_name = 'measurements'
-    template_name = 'measurement_list.html'
+def dashboard(request):
+    return render(request, 'dashboard.html')
 
-    def get(self, request, *args, **kwargs):
-        try:
-            file_path = os.path.join(settings.BASE_DIR, 'test_data')
-            with open(file_path, 'r') as measurement_file:
-                for value in measurement_file:
-                    co2_val = float(value.strip())
-                    CO2Measurement.objects.get_or_create(
-                        sensor_name="Test-Sensor",
-                        co2_level=co2_val
-                    )
-        except (IOError, ValueError):
-            pass
-        return super(MeasurementList, self).get(request, *args, **kwargs)
+def enterprise_list(request):
+    return render(request, 'enterprises.html')
 
-class MeasurementCreate(generic.CreateView): # клас обробки форми
-    form_class = MeasurementForm
-    template_name = 'create_measurement.html'
-    success_url = reverse_lazy('measurement_list')
+def mqtt_dashboard(request):
+    return render(request, 'mqtt_dashboard.html')
+
+def forecasting(request):
+    return render(request, 'forecasting.html')

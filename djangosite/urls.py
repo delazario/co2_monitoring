@@ -1,9 +1,11 @@
 from django.contrib import admin
 from django.urls import path
-from djangoapp.views import MeasurementList, MeasurementCreate
+from djangoapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', MeasurementList.as_view(), name='measurement_list'),
-    path('create/', MeasurementCreate.as_view(), name='create_measurement'),
+    path('', views.dashboard, name='dashboard'),
+    path('enterprises/', views.enterprise_list, name='enterprises'),
+    path('mqtt/', views.mqtt_dashboard, name='mqtt'),
+    path('forecasting/', views.forecasting, name='forecasting'),
 ]
