@@ -1,35 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h2>Recent CO2 Measurements</h2>
-    <a href="{% url 'create_measurement' %}" class="btn btn-success">+ Add Measurement</a>
-</div>
-
-<div class="card shadow-sm">
-    <div class="card-body">
-        <table class="table table-hover mb-0">
-            <thead class="table-light">
-                <tr>
-                    <th>#</th>
-                    <th>Sensor Name</th>
-                    <th>CO2 Level (ppm)</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for measurement in measurements %}
-                <tr>
-                    <td>{{ forloop.counter }}</td>
-                    <td>{{ measurement.sensor_name|default:"—" }}</td>
-                    <td class="fw-bold text-danger">{{ measurement.co2_level }}</td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="3" class="text-center text-muted">No records found</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+<div class="row mt-5">
+    <div class="col text-center">
+        <h1 class="display-4">CO2 Monitoring Dashboard</h1>
+        <p class="lead text-muted">Data aggregation from industrial facilities in the Zaporizhzhia region.</p>
+        </div>
     </div>
 </div>
 {% endblock %}
